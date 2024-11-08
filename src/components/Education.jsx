@@ -34,27 +34,27 @@ function Education({ education, setEducation }) {
       <div className="field-row">
         <h3>Start Date</h3>
         <input
-          id='start'
+          id='edu_start'
           type="text"
-          value={education.start}
+          value={education.edu_start}
           onChange={handleChange}
         />
       </div>
       <div className="field-row">
         <h3>End Date</h3>
         <input
-          id='end'
+          id='edu_end'
           type="text"
-          value={education.end}
+          value={education.edu_end}
           onChange={handleChange}
         />
       </div>
       <div className="field-row">
         <h3>Location</h3>
         <input
-          id='location'
+          id='edu_location'
           type="text"
-          value={education.location}
+          value={education.edu_location}
           onChange={handleChange}
         />
       </div>

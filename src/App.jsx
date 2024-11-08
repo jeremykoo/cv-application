@@ -6,8 +6,6 @@ import Experience from './components/Experience';
 import Resume from './components/Resume';
 import Options from './components/Options';
 
-import { InputComponent } from './components/Education';
-
 function App() {
   const [details, setDetails] = useState({ 
     name: 'John Smith',
@@ -19,9 +17,18 @@ function App() {
   const [education, setEducation] = useState({
     school: 'Ohio State University',
     degree: 'Bachelors of Biology',
-    start: '08/2020',
-    end: 'present',
-    location: 'New York City, US'
+    edu_start: '08/2020',
+    edu_end: 'present',
+    edu_location: 'New York City, US'
+  });
+
+  const [experience, setExperience] = useState({
+    company: 'McDonalds',
+    position: 'Cashier',
+    exp_start: '11/2018',
+    exp_end: '04/2022',
+    exp_location: 'Los Angeles, CA',
+    description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend suspendisse malesuada posuere litora etiam posuere. Potenti cursus torquent litora netus dolor a odio.'
   });
 
   return (
@@ -29,11 +36,10 @@ function App() {
       <div className='info-column'>
         <Options />
         <PersonalDetails details={details} setDetails={setDetails} />
-        {/* <InputComponent education={education} setEducation={setEducation}/> */}
         <Education education={education} setEducation={setEducation}/>
-        <Experience />
+        <Experience experience={experience} setExperience={setExperience}/>
       </div>
-      <Resume details={details} education={education}/>
+      <Resume details={details} education={education} experience={experience}/>
     </div>
   )
 }

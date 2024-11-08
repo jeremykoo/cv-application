@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import '../styles/resume.css';
 
-function Resume({ details, education }) {
+function Resume({ details, education, experience }) {
   return (
     <div className="resume">
       <header>
@@ -17,8 +17,8 @@ function Resume({ details, education }) {
           <h2>Education</h2>
           <div className='listing'>
             <div className='left'>
-              <p>{education.start} - {education.end}</p>
-              <p>{education.location}</p>
+              <p>{education.edu_start} - {education.edu_end}</p>
+              <p>{education.edu_location}</p>
             </div>
             <div className='right'>
               <p>{education.school}</p>
@@ -41,16 +41,16 @@ function Resume({ details, education }) {
           <h2>Experience</h2>
           <div className='listing'>
             <div className='left'>
-              <p>08/2020 - present</p>
-              <p>New York City, US</p>
+              <p>{experience.exp_start} - {experience.exp_end}</p>
+              <p>{experience.exp_location}</p>
             </div>
             <div className='right'>
-              <p>McDonalds Inc</p>
-              <p>Cashier</p>
-              <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend suspendisse malesuada posuere litora etiam posuere. Potenti cursus torquent litora netus dolor a odio. </p>
+              <p>{experience.company}</p>
+              <p>{experience.position}</p>
+              <p>{experience.description}</p>
             </div>
           </div>
-          <div className='listing'>
+          {/* <div className='listing'>
             <div className='left'>
               <p>08/2020 - 11/2024</p>
               <p>Los Angeles, CA</p>
@@ -60,7 +60,7 @@ function Resume({ details, education }) {
               <p>Software Engineer</p>
               <p>Duis malesuada sociosqu sodales dignissim magna accumsan dis. Lacus hendrerit ultricies mollis himenaeos amet eget. Est rhoncus mauris euismod quis dignissim. Aenean lorem quisque faucibus euismod fringilla nibh vel etiam bibendum. Mauris purus class vivamus gravida convallis vestibulum. </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </div>

@@ -2,60 +2,73 @@
 
 import '../styles/field.css';
 
-function Experience() {
-  return (
-    <div className='field'>
-      <h2>Experience</h2>
-      <div className="field-row">
-        <h3>Company Name</h3>
-        <input type="text" />
-      </div>
-      <div className="field-row">
-        <h3>Position Title</h3>
-        <input type="text" />
-      </div>
-      <div className="field-row">
-        <h3>Start Date</h3>
-        <input type="text" />
-      </div>
-      <div className="field-row">
-        <h3>End Date</h3>
-        <input type="text" />
-      </div>
-      <div className="field-row">
-        <h3>Location</h3>
-        <input type="text" />
-      </div>
-      <div className="field-row">
-        <h3>Description</h3>
-        <input type="text" />
-      </div>
-    </div>
-
-  );
-}
-
-function InputComponent({ education, setEducation }) {
+function Experience({ experience, setExperience }) {
   function handleChange(event) {
-    setEducation({
-      ...education,
+    setExperience({
+      ...experience,
       [event.target.id]: event.target.value
     });
   };
 
   return (
-    <div>
-      <h2>Input Component</h2>
-      <input
-        id='school'
-        type="text"
-        value={education.school}
-        onChange={handleChange}
-      />
+    <div className='field'>
+      <h2>Experience</h2>
+      <div className="field-row">
+        <h3>Company Name</h3>
+        <input
+          id='company'
+          type="text"
+          value={experience.company}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="field-row">
+        <h3>Position Title</h3>
+        <input
+          id='position'
+          type="text"
+          value={experience.position}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="field-row">
+        <h3>Start Date</h3>
+        <input
+          id='exp_start'
+          type="text"
+          value={experience.exp_start}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="field-row">
+        <h3>End Date</h3>
+        <input
+          id='exp_end'
+          type="text"
+          value={experience.exp_end}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="field-row">
+        <h3>Location</h3>
+        <input
+          id='exp_location'
+          type="text"
+          value={experience.exp_location}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="field-row">
+        <h3>Description</h3>
+        <input
+          id='description'
+          type="text"
+          value={experience.description}
+          onChange={handleChange}
+        />
+      </div>
     </div>
   );
 }
-
-export {InputComponent};
 
 export default Experience;
