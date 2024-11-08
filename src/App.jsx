@@ -1,34 +1,32 @@
+/* eslint-disable react/prop-types */
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import PersonalDetails from './components/PersonalDetails';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Resume from './components/Resume';
+import Options from './components/Options';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [details, setDetails] = useState({ 
+    name: 'John Smith',
+    email: 'johnsmith@gmail.com',
+    phone: '123-456-7890',
+    address: 'Baltimore, Maryland',
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='layout'>
+      
+      <div className='info-column'>
+        <Options />
+        <PersonalDetails details={details} setDetails={setDetails} />
+        <Education />
+        <Experience />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <Resume details={details}/>
+    </div>
   )
 }
 

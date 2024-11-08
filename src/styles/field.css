@@ -1,0 +1,19 @@
+.field {
+  align-items: start;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.field-row {
+  margin: 10px 0;
+}
+
+input {
+  background-color: #ededed;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}

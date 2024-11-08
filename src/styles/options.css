@@ -1,0 +1,26 @@
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.options > button {
+  border: none;
+}
+
+.clear,
+.load {
+  width: 50%;
+  padding: 10px;
+}
+
+.clear {
+  color: red;
+  background-color: white;
+}
+
+.load {
+  background-color: #ededed;
+  border-radius: 10px;
+}
