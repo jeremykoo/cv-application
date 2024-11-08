@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import '../styles/field.css';
 
 function Experience() {
@@ -32,5 +34,28 @@ function Experience() {
 
   );
 }
+
+function InputComponent({ education, setEducation }) {
+  function handleChange(event) {
+    setEducation({
+      ...education,
+      [event.target.id]: event.target.value
+    });
+  };
+
+  return (
+    <div>
+      <h2>Input Component</h2>
+      <input
+        id='school'
+        type="text"
+        value={education.school}
+        onChange={handleChange}
+      />
+    </div>
+  );
+}
+
+export {InputComponent};
 
 export default Experience;
