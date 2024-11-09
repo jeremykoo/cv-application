@@ -2,14 +2,24 @@
 
 import '../styles/displayhandler.css'
 import { useState } from "react";
+import { EmptyEduInput } from './InputEducation';
+import { EmptyExpInput } from './InputExperience';
 
-function Entry({ type, entry}) {
+function Entry({ type, entries, entry, setEntries, handleVisible }) {
+  function handleDelete() {
+    setEntries(entries.filter((obj) => obj.id !== entry.id))
+  }
+
+  function handleEdit() {
+    handleVisible();
+  }
+
   return (
     <div className='entry'>
         {type==='Education' ? entry.school : entry.company}
       <div className='icons'>
-        <button>Edit</button>
-        <button>Trash</button>
+        <button onClick={handleEdit}>Edit</button>
+        <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
   );
@@ -21,24 +31,24 @@ function AddButton({ title, onClick }) {
   );
 }
 
-function DisplayHandler({ title, entries, children }) {
+function DisplayHandler({ title, entries, setEntries}) {
   const [inputVisible, setInputVisible] = useState(false);
 
-  function handleClick() {
+  function handleVisible() {
     setInputVisible(!inputVisible);
-    console.log('add button clicked');
   }
 
   return (
     <div>
       {entries.map((entry) => (
-        <Entry key={title==='Education' ? entry.school : entry.company} type={title} entry={entry} />
+        <Entry key={entry.id} type={title} entries={entries} entry={entry} setEntries={setEntries} handleVisible={handleVisible}/>
       ))}
       {!inputVisible && 
         <div className='button-bg'>
-          <AddButton title={title} onClick={handleClick}/>
+          <AddButton title={title} onClick={handleVisible}/>
         </div>}
-      {inputVisible && children}
+      {inputVisible && title==='Education' && <EmptyEduInput entries={entries} setEntries={setEntries} handleVisible={handleVisible}/>}
+      {inputVisible && title==='Experience' && <EmptyExpInput entries={entries} setEntries={setEntries} handleVisible={handleVisible}/>}
     </div>
   );
 }

@@ -7,7 +7,6 @@ function DropDown({ title, children }) {
 
   function handleClick() {
     setIsVisible(!isVisible);
-    console.log('dropdown clicked');
   }
   
   return (

@@ -18,6 +18,7 @@ function App() {
 
   const [education, setEducation] = useState([
     {
+      id: crypto.randomUUID(),
       school: 'Ohio State University',
       degree: 'Bachelors of Biology',
       edu_start: '08/2020',
@@ -25,6 +26,7 @@ function App() {
       edu_location: 'New York City, US'
     },
     {
+      id: crypto.randomUUID(),
       school: 'Boston College',
       degree: 'Masters in Mathematics',
       edu_start: '08/2020',
@@ -35,6 +37,7 @@ function App() {
 
   const [experience, setExperience] = useState([
     {
+      id: crypto.randomUUID(),
       company: 'McDonalds',
       position: 'Cashier',
       exp_start: '11/2018',
@@ -43,6 +46,7 @@ function App() {
       description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend suspendisse malesuada posuere litora etiam posuere. Potenti cursus torquent litora netus dolor a odio.'
     },
     {
+      id: crypto.randomUUID(),
       company: 'Blizzard',
       position: 'Game Designer',
       exp_start: '11/2018',
@@ -58,13 +62,13 @@ function App() {
         <Options />
         <PersonalDetails details={details} setDetails={setDetails} />
         <DropDown title='Education'>
-          <DisplayHandler title='Education' entries={education}>
-            <InputEducation education={education} setEducation={setEducation}/>
+          <DisplayHandler title='Education' entries={education} setEntries={setEducation}>
+            <InputEducation entries={education} setEntries={setEducation}/>
           </DisplayHandler>
         </DropDown>
         <DropDown title='Experience'>
-          <DisplayHandler title='Experience' entries={experience}>
-            <InputExperience experience={experience} setExperience={setExperience}/>
+          <DisplayHandler title='Experience' entries={experience} setEntries={setExperience}>
+            <InputExperience entries={experience} setEntries={setExperience}/>
           </DisplayHandler>
         </DropDown>
       </div>
