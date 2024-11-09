@@ -7,11 +7,12 @@ function DropDown({ title, children }) {
 
   function handleClick() {
     setIsVisible(!isVisible);
+    console.log('dropdown clicked');
   }
   
   return (
-    <div className='section-container field'>
-      <div className={`heading`} onClick={handleClick}>
+    <div>
+      <div className={`heading ${isVisible ? 'drop-title' : 'field'}`} onClick={handleClick}>
         <h2>{title}</h2>
         <p className={`${isVisible ? 'rotated' : ''}`}>^</p>
       </div>

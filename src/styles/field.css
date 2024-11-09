@@ -17,3 +17,18 @@ input {
   padding: 10px;
   border-radius: 10px;
 }
+
+.drop-field {
+  border-radius: 0 0 10px 10px;
+  align-items: start;
+  background-color: white;
+  padding: 20px;
+  margin: 0 20px 20px 20px;
+}
+
+.drop-field > button {
+  border: 4px solid #ededed;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}

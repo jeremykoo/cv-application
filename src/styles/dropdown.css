@@ -12,6 +12,10 @@
   transform: rotate(180deg);
 }
 
-.box {
-  background-color: blue;
+.drop-title {
+  align-items: start;
+  background-color: white;
+  padding: 20px;
+  margin: 20px 20px 0 20px;
+  border-radius: 10px 10px 0 0;
 }

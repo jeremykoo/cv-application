@@ -2,63 +2,73 @@
 
 import '../styles/field.css';
 
-function Education({ education, setEducation }) {
+function InputExperience({ experience, setExperience }) {
   function handleChange(event) {
-    setEducation({
-      ...education,
+    setExperience({
+      ...experience,
       [event.target.id]: event.target.value
     });
   };
 
   return (
-    <div>
+    <div className='drop-field'>
       <div className="field-row">
-        <h3>School</h3>
+        <h3>Company Name</h3>
         <input
-          id='school'
+          id='company'
           type="text"
-          value={education.school}
+          value={experience.company}
           onChange={handleChange}
         />
       </div>
       <div className="field-row">
-        <h3>Degree</h3>
+        <h3>Position Title</h3>
         <input
-          id='degree'
+          id='position'
           type="text"
-          value={education.degree}
+          value={experience.position}
           onChange={handleChange}
         />
       </div>
       <div className="field-row">
         <h3>Start Date</h3>
         <input
-          id='edu_start'
+          id='exp_start'
           type="text"
-          value={education.edu_start}
+          value={experience.exp_start}
           onChange={handleChange}
         />
       </div>
       <div className="field-row">
         <h3>End Date</h3>
         <input
-          id='edu_end'
+          id='exp_end'
           type="text"
-          value={education.edu_end}
+          value={experience.exp_end}
           onChange={handleChange}
         />
       </div>
       <div className="field-row">
         <h3>Location</h3>
         <input
-          id='edu_location'
+          id='exp_location'
           type="text"
-          value={education.edu_location}
+          value={experience.exp_location}
           onChange={handleChange}
         />
       </div>
+      <div className="field-row">
+        <h3>Description</h3>
+        <input
+          id='description'
+          type="text"
+          value={experience.description}
+          onChange={handleChange}
+        />
+      </div>
+      <button>Save</button>
     </div>
   );
 }
 
-export default Education;
+export default InputExperience;
