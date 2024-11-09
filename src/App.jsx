@@ -57,7 +57,7 @@ function App() {
   return (
     <div className='layout'>
       <div className='info-column'>
-        <Options />
+        <Options setDetails={setDetails} setEducation={setEducation} setExperience={setExperience}/>
         <PersonalDetails details={details} setDetails={setDetails} />
         <DropDown title='Education'>
           <DisplayHandler title='Education' entries={education} setEntries={setEducation} />
