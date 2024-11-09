@@ -15,22 +15,41 @@ function App() {
     address: 'Baltimore, Maryland',
   });
 
-  const [education, setEducation] = useState({
-    school: 'Ohio State University',
-    degree: 'Bachelors of Biology',
-    edu_start: '08/2020',
-    edu_end: 'present',
-    edu_location: 'New York City, US'
-  });
+  const [education, setEducation] = useState([
+    {
+      school: 'Ohio State University',
+      degree: 'Bachelors of Biology',
+      edu_start: '08/2020',
+      edu_end: 'present',
+      edu_location: 'New York City, US'
+    },
+    {
+      school: 'Boston College',
+      degree: 'Masters in Mathematics',
+      edu_start: '08/2020',
+      edu_end: '02/1999',
+      edu_location: 'Boston, MA'
+    },
+  ]);
 
-  const [experience, setExperience] = useState({
-    company: 'McDonalds',
-    position: 'Cashier',
-    exp_start: '11/2018',
-    exp_end: '04/2022',
-    exp_location: 'Los Angeles, CA',
-    description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend suspendisse malesuada posuere litora etiam posuere. Potenti cursus torquent litora netus dolor a odio.'
-  });
+  const [experience, setExperience] = useState([
+    {
+      company: 'McDonalds',
+      position: 'Cashier',
+      exp_start: '11/2018',
+      exp_end: '04/2022',
+      exp_location: 'Los Angeles, CA',
+      description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend suspendisse malesuada posuere litora etiam posuere. Potenti cursus torquent litora netus dolor a odio.'
+    },
+    {
+      company: 'Blizzard',
+      position: 'Game Designer',
+      exp_start: '11/2018',
+      exp_end: '04/2022',
+      exp_location: 'Austin, TX',
+      description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend suspendisse malesuada posuere litora etiam posuere. Potenti cursus torquent litora netus dolor a odio.'
+    },
+  ]);
 
   return (
     <div className='layout'>

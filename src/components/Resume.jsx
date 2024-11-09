@@ -46,11 +46,15 @@ function Resume({ details, education, experience }) {
       <main>
         <div className='resume-section'>
           <h2>Education</h2>
-          <EduField education={education}/>
+          {education.map((edu) => (
+            <EduField key={edu.school} education={edu}/>
+          ))}
         </div>
         <div className='resume-section'>
           <h2>Experience</h2>
-          <ExpField experience={experience}/>
+          {experience.map((exp) => (
+            <ExpField key={exp.company} experience={exp}/>
+          ))}
         </div>
       </main>
     </div>

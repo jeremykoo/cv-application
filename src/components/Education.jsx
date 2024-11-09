@@ -12,7 +12,6 @@ function Education({ education, setEducation }) {
 
   return (
     <div>
-      {/* <h2>Education</h2> */}
       <div className="field-row">
         <h3>School</h3>
         <input
