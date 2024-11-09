@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 import PersonalDetails from './components/PersonalDetails';
-import InputEducation from './components/InputEducation';
-import InputExperience from './components/InputExperience';
 import Resume from './components/Resume';
 import Options from './components/Options';
 import DropDown from './components/DropDown';
@@ -62,14 +60,10 @@ function App() {
         <Options />
         <PersonalDetails details={details} setDetails={setDetails} />
         <DropDown title='Education'>
-          <DisplayHandler title='Education' entries={education} setEntries={setEducation}>
-            <InputEducation entries={education} setEntries={setEducation}/>
-          </DisplayHandler>
+          <DisplayHandler title='Education' entries={education} setEntries={setEducation} />
         </DropDown>
         <DropDown title='Experience'>
-          <DisplayHandler title='Experience' entries={experience} setEntries={setExperience}>
-            <InputExperience entries={experience} setEntries={setExperience}/>
-          </DisplayHandler>
+          <DisplayHandler title='Experience' entries={experience} setEntries={setExperience} />
         </DropDown>
       </div>
       <Resume details={details} education={education} experience={experience}/>

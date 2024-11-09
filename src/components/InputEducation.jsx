@@ -3,22 +3,27 @@
 import { useState } from 'react';
 import '../styles/field.css';
 
-function InputEducation({ education, setEducation }) {
+function EditEduInput({ currentEntry, entries, setEntries}) {
+  const [entry, setEntry] = useState({
+    ...currentEntry
+  });
+
   function handleChange(event) {
-    setEducation({
-      ...education,
+    setEntry({
+      ...entry,
       [event.target.id]: event.target.value
     });
+    setEntries(entries.map((obj) => obj.id === entry.id ? entry : obj));
   };
 
   return (
-    <div className='drop-field'>
+    <form className='drop-field editing'>
       <div className="field-row">
         <h3>School</h3>
         <input
           id='school'
           type="text"
-          value={education.school}
+          value={entry.school}
           onChange={handleChange}
         />
       </div>
@@ -27,7 +32,7 @@ function InputEducation({ education, setEducation }) {
         <input
           id='degree'
           type="text"
-          value={education.degree}
+          value={entry.degree}
           onChange={handleChange}
         />
       </div>
@@ -36,7 +41,7 @@ function InputEducation({ education, setEducation }) {
         <input
           id='edu_start'
           type="text"
-          value={education.edu_start}
+          value={entry.edu_start}
           onChange={handleChange}
         />
       </div>
@@ -45,7 +50,7 @@ function InputEducation({ education, setEducation }) {
         <input
           id='edu_end'
           type="text"
-          value={education.edu_end}
+          value={entry.edu_end}
           onChange={handleChange}
         />
       </div>
@@ -54,12 +59,11 @@ function InputEducation({ education, setEducation }) {
         <input
           id='edu_location'
           type="text"
-          value={education.edu_location}
+          value={entry.edu_location}
           onChange={handleChange}
         />
       </div>
-      <button>Save</button>
-    </div>
+    </form>
   );
 }
 
@@ -141,6 +145,4 @@ function EmptyEduInput({ entries, setEntries, handleVisible }) {
   );
 }
 
-export { EmptyEduInput };
-
-export default InputEducation;
+export { EditEduInput, EmptyEduInput };

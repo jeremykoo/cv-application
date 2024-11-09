@@ -2,25 +2,31 @@
 
 import '../styles/displayhandler.css'
 import { useState } from "react";
-import { EmptyEduInput } from './InputEducation';
-import { EmptyExpInput } from './InputExperience';
+import { EditEduInput, EmptyEduInput } from './InputEducation';
+import { EditExpInput, EmptyExpInput } from './InputExperience';
 
-function Entry({ type, entries, entry, setEntries, handleVisible }) {
+function Entry({ type, entries, entry, setEntries }) {
+  const [isEditing, setIsEditing] = useState(false);
+
   function handleDelete() {
     setEntries(entries.filter((obj) => obj.id !== entry.id))
   }
 
   function handleEdit() {
-    handleVisible();
+    setIsEditing(!isEditing);
   }
 
   return (
-    <div className='entry'>
+    <div>
+      <div className={`entry ${isEditing ? 'editing' : ''}`}>
         {type==='Education' ? entry.school : entry.company}
-      <div className='icons'>
-        <button onClick={handleEdit}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
+        <div className='icons'>
+          <button onClick={handleEdit}>Edit</button>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
       </div>
+      {isEditing && type==='Education' && <EditEduInput currentEntry={entry} entries={entries} setEntries={setEntries}/>}
+      {isEditing && type==='Experience' && <EditExpInput currentEntry={entry} entries={entries} setEntries={setEntries}/>}
     </div>
   );
 }

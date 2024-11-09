@@ -3,22 +3,27 @@
 import { useState } from 'react';
 import '../styles/field.css';
 
-function InputExperience({ experience, setExperience }) {
+function EditExpInput({ currentEntry, entries, setEntries }) {
+  const [entry, setEntry] = useState({
+    ...currentEntry
+  });
+
   function handleChange(event) {
-    setExperience({
-      ...experience,
+    setEntry({
+      ...entry,
       [event.target.id]: event.target.value
     });
+    setEntries(entries.map((obj) => obj.id === entry.id ? entry : obj));
   };
 
   return (
-    <div className='drop-field'>
+    <form className='drop-field editing'>
       <div className="field-row">
         <h3>Company Name</h3>
         <input
           id='company'
           type="text"
-          value={experience.company}
+          value={entry.company}
           onChange={handleChange}
         />
       </div>
@@ -27,7 +32,7 @@ function InputExperience({ experience, setExperience }) {
         <input
           id='position'
           type="text"
-          value={experience.position}
+          value={entry.position}
           onChange={handleChange}
         />
       </div>
@@ -36,7 +41,7 @@ function InputExperience({ experience, setExperience }) {
         <input
           id='exp_start'
           type="text"
-          value={experience.exp_start}
+          value={entry.exp_start}
           onChange={handleChange}
         />
       </div>
@@ -45,7 +50,7 @@ function InputExperience({ experience, setExperience }) {
         <input
           id='exp_end'
           type="text"
-          value={experience.exp_end}
+          value={entry.exp_end}
           onChange={handleChange}
         />
       </div>
@@ -54,7 +59,7 @@ function InputExperience({ experience, setExperience }) {
         <input
           id='exp_location'
           type="text"
-          value={experience.exp_location}
+          value={entry.exp_location}
           onChange={handleChange}
         />
       </div>
@@ -63,12 +68,11 @@ function InputExperience({ experience, setExperience }) {
         <input
           id='description'
           type="text"
-          value={experience.description}
+          value={entry.description}
           onChange={handleChange}
         />
       </div>
-      <button>Save</button>
-    </div>
+    </form>
   );
 }
 
@@ -160,6 +164,4 @@ function EmptyExpInput({ entries, setEntries, handleVisible }) {
   );
 }
 
-export { EmptyExpInput };
-
-export default InputExperience;
+export { EditExpInput, EmptyExpInput };

@@ -32,3 +32,8 @@ input {
   border-radius: 5px;
   background-color: white;
 }
+
+.editing {
+  margin-bottom: 0px;
+  border-radius: 0;
+}
