@@ -11,9 +11,33 @@
 
 .layout {
   display: flex;
+  align-items: flex-start;
   margin: 20px 0;
 }
 
 .info-column {
   flex: 1;
+}
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+  }
+
+  .info-column {
+    display: none;
+  }
+
+  .layout {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+    page-break-inside: avoid;
+    box-sizing: border-box;
+  }
 }

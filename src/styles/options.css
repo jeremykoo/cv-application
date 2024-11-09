@@ -26,3 +26,27 @@
   background-color: #ededed;
   border-radius: 10px;
 }
+
+.externals {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 10px;
+  gap: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.externals > button {
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+@media print {
+  .externals {
+    display: none;
+  }
+}

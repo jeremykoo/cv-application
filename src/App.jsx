@@ -5,6 +5,7 @@ import Resume from './components/Resume';
 import Options from './components/Options';
 import DropDown from './components/DropDown';
 import DisplayHandler from './components/DisplayHandler';
+import Externals from './components/Externals';
 
 function App() {
   const [details, setDetails] = useState({ 
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <div className='layout'>
+      <Externals />
       <div className='info-column'>
         <Options setDetails={setDetails} setEducation={setEducation} setExperience={setExperience}/>
         <PersonalDetails details={details} setDetails={setDetails} />

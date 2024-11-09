@@ -54,3 +54,21 @@ header {
   background-color: #ededed;
   color: darkcyan;
 }
+
+@media print {
+  .shadow {
+    box-shadow: none;
+  }
+
+  .resume {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  header {
+    background-color: darkcyan;
+    color: white
+  }
+}
