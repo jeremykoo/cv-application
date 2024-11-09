@@ -68,7 +68,7 @@ function Options({ setDetails, setEducation, setExperience }) {
   }
 
   return (
-    <div className='options field'>
+    <div className='options field shadow'>
       <button className='clear' onClick={handleClear}>Clear Resume</button>
       <button className='load' onClick={handleLoad}>Load Example</button>
     </div>

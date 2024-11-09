@@ -34,7 +34,7 @@ function ExpField({ experience }) {
 
 function Resume({ details, education, experience }) {
   return (
-    <div className="resume">
+    <div className="resume shadow">
       <header>
         <h1>{details.name}</h1>
         <div className='contact'>

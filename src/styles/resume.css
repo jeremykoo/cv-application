@@ -7,6 +7,10 @@
   top: 20px;
 }
 
+.shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
 header {
   text-align: center;
   background-color: darkcyan;
