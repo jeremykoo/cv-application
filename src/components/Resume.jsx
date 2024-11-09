@@ -44,18 +44,18 @@ function Resume({ details, education, experience }) {
         </div>
       </header>
       <main>
-        <div className='resume-section'>
+        {education.length !== 0 && <div className='resume-section'>
           <h2>Education</h2>
           {education.map((edu) => (
             <EduField key={edu.school} education={edu}/>
           ))}
-        </div>
-        <div className='resume-section'>
-          <h2>Experience</h2>
+        </div>}
+        {experience.length !== 0 && <div className='resume-section'>
+          {experience.length !== 0 ? <h2>Experience</h2> : null}
           {experience.map((exp) => (
             <ExpField key={exp.company} experience={exp}/>
           ))}
-        </div>
+        </div>}
       </main>
     </div>
   );

@@ -9,11 +9,16 @@ function EditEduInput({ currentEntry, entries, setEntries}) {
   });
 
   function handleChange(event) {
-    setEntry({
+    const newEntry = {
       ...entry,
       [event.target.id]: event.target.value
-    });
-    setEntries(entries.map((obj) => obj.id === entry.id ? entry : obj));
+    }
+
+    setEntry(newEntry);
+
+    setEntries(entries.map((obj) => 
+      obj.id === newEntry.id ? newEntry : obj
+    ));
   };
 
   return (
