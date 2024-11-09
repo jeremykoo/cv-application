@@ -5,6 +5,7 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Resume from './components/Resume';
 import Options from './components/Options';
+import DropDown from './components/DropDown';
 
 function App() {
   const [details, setDetails] = useState({ 
@@ -36,8 +37,12 @@ function App() {
       <div className='info-column'>
         <Options />
         <PersonalDetails details={details} setDetails={setDetails} />
-        <Education education={education} setEducation={setEducation}/>
-        <Experience experience={experience} setExperience={setExperience}/>
+        <DropDown title='Education'>
+          <Education education={education} setEducation={setEducation}/>
+        </DropDown>
+        <DropDown title='Experience'>
+          <Experience experience={experience} setExperience={setExperience}/>
+        </DropDown>
       </div>
       <Resume details={details} education={education} experience={experience}/>
     </div>

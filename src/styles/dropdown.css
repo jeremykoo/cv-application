@@ -1,0 +1,17 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading > p {
+  transition: transform 0.4s ease;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.box {
+  background-color: blue;
+}

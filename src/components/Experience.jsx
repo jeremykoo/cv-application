@@ -11,8 +11,8 @@ function Experience({ experience, setExperience }) {
   };
 
   return (
-    <div className='field'>
-      <h2>Experience</h2>
+    <div>
+      {/* <h2>Experience</h2> */}
       <div className="field-row">
         <h3>Company Name</h3>
         <input

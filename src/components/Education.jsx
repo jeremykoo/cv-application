@@ -11,8 +11,8 @@ function Education({ education, setEducation }) {
   };
 
   return (
-    <div className='field'>
-      <h2>Education</h2>
+    <div>
+      {/* <h2>Education</h2> */}
       <div className="field-row">
         <h3>School</h3>
         <input
