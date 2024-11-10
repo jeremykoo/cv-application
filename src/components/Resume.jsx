@@ -32,9 +32,9 @@ function ExpField({ experience }) {
   )
 }
 
-function Resume({ details, education, experience }) {
+function Resume({ contentRef, details, education, experience }) {
   return (
-    <div className="resume shadow">
+    <div ref={contentRef} className='resume shadow'>
       <header>
         <h1>{details.name}</h1>
         <div className='contact'>

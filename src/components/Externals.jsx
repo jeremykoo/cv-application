@@ -1,12 +1,14 @@
+/* eslint-disable react/prop-types */
 
-function Externals() {
+function Externals({ savePDF }) {
+
   function handlePrint() {
     print();
   }
 
   return (
     <div className="externals shadow">
-      <button>Save</button>
+      <button onClick={savePDF}>Save<br />PDF</button>
       <button onClick={handlePrint}>Print</button>
     </div>
   );

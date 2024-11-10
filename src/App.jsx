@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import PersonalDetails from './components/PersonalDetails';
 import Resume from './components/Resume';
@@ -6,6 +6,8 @@ import Options from './components/Options';
 import DropDown from './components/DropDown';
 import DisplayHandler from './components/DisplayHandler';
 import Externals from './components/Externals';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 function App() {
   const [details, setDetails] = useState({ 
@@ -55,9 +57,28 @@ function App() {
     },
   ]);
 
+  const contentRef = useRef();
+
+  const savePDF = () => {
+    html2canvas(contentRef.current, { scale: 3 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      
+      const pdf = new jsPDF("p", "mm", "a4"); 
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+
+      const ratio = Math.min(pageWidth / canvas.width, pageHeight / canvas.height);
+      const imgWidth = canvas.width * ratio;
+      const imgHeight = canvas.height * ratio;
+
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      pdf.save("resume.pdf");
+    });
+  };
+
   return (
     <div className='layout'>
-      <Externals />
+      <Externals details={details} education={education} experience={experience} savePDF={savePDF}/>
       <div className='info-column'>
         <Options setDetails={setDetails} setEducation={setEducation} setExperience={setExperience}/>
         <PersonalDetails details={details} setDetails={setDetails} />
@@ -68,7 +89,7 @@ function App() {
           <DisplayHandler title='Experience' entries={experience} setEntries={setExperience} />
         </DropDown>
       </div>
-      <Resume details={details} education={education} experience={experience}/>
+      <Resume contentRef={contentRef} details={details} education={education} experience={experience}/>
     </div>
   )
 }

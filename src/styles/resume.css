@@ -1,10 +1,11 @@
 .resume {
-  background-color: white;
-  height: 1000px;
+  background-color: #ffffff;
+  height: 900px;
   margin: 20px;
   flex: 2;
   position: sticky;
   top: 20px;
+  font-size: 0.9rem;
 }
 
 .shadow {
